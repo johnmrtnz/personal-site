@@ -1,3 +1,30 @@
+/* App.css - Main application styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #00b4d8;
+  --text-dark: #333;
+  --text-light: #777;
+  --background-color: #A8CC8C;
+  --white: #fff;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-color);
+}
+
+
 .App {
   text-align: center;
 }
@@ -13,6 +40,7 @@
   }
 }
 
+/* old color 282c34; */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

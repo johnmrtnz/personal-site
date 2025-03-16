@@ -183,6 +183,48 @@
   margin-right: calc(50% + 60px);
 }
 
+/* Education styles */
+.education-item {
+  position: relative;
+  text-align: left;
+  width: calc(50% - 60px);
+  margin: 50px auto 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.education-item ul {
+  list-style-position: inside; /* Keeps bullets aligned with text */
+  padding-left: 0; /* Removes default padding */
+  text-align: center; /* Centers the list items */
+  margin: 15px 0;
+}
+
+.education-item ul li {
+  margin-bottom: 8px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.education-institution {
+  text-align: left;
+  color: var(--text-dark);
+
+}
+
+.education-year {
+  text-align: left;
+  color: var(--text-dark);
+  
+}
+
+.education-degree {
+  text-align: left;
+  color: var(--text-dark);
+  
+}
 
 /* Common Section Styles */
 .section-title {

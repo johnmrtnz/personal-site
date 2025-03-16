@@ -110,6 +110,25 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Education Section */}
+        <div className='container'>
+          <div className="section-title">
+            <h2>Education <span className="highlight"></span></h2>
+          </div>
+
+          <div className="education-item">
+            <div className="education-institution"> Stevens Institute of Technology</div>
+            <div className="education-year">2014-2018</div>
+            <div className="education-degree">Masters of Engineering, Biomedical Engineering</div>
+            <div className="education-degree">Bachelors of Engineering, Biomedical Engineering</div>
+            <ul>
+              <li>Kurt Lab</li>
+            </ul>
+          </div>
+
+        </div>
+
       </section>
 
     </div>
