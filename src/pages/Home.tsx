@@ -10,7 +10,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="hero-content">
             <h1>Hello, I'm <span className="highlight">John</span></h1>
-            <h2>Data Analyst</h2>
+            <h2>Data Explorer</h2>
             <p>
               Welcome to my personal website!
             </p>
@@ -38,10 +38,10 @@ const Home: React.FC = () => {
             
             <div className="about-text">
               <p>
-                [TBD]
+              As a first-generation Colombian American with a passion for data, I leverage my expertise in healthcare imaging and financial analytics to solve complex problems at Ernst & Young, where I currently manage forensic data investigations to uncover financial crimes and ensure pharmaceutical compliance. 
               </p>
               <p>
-                [TBD]
+              My journey from developing brain imaging algorithms as a Biomedical Engineering researcher to optimizing fraud detection systems reflects my commitment to using data science for meaningful impact, combining my technical skills in Python, data visualization, and machine learning with my bilingual background to bring a unique perspective to every challenge.
               </p>
               
               <div className="personal-info">
@@ -74,37 +74,37 @@ const Home: React.FC = () => {
           
           <div className="timeline">
             <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2024 - Present</div>
+              {/* <div className="timeline-dot"></div> */}
               <div className="timeline-content">
                 <h3>Manager</h3>
                 <h4>EY</h4>
+                <h4>2024 - Present</h4>
                 <p>
-                  EY
+                At Ernst & Young, I currently lead cross-functional teams in forensic data analytics, driving investigations and platform optimization while delivering upskilling programs and presenting innovative machine learning applications in fraud detection to enhance client engagement and industry thought leadership.
                 </p>
               </div>
             </div>
             
             <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2021 - 2024</div>
+              {/* <div className="timeline-dot"></div> */}
               <div className="timeline-content">
                 <h3>Senior</h3>
                 <h4>EY</h4>
+                <h4>2021 - 2024</h4>
                 <p>
-                  EY
+                As a Senior in Forensics Data Analytics at Ernst & Young, I optimized project turnaround by 50% through implementation of advanced tools like Azure Data Factory and Databricks, while developing comprehensive media monitoring platforms to mitigate company risk by identifying potential red flags in publicly available data sources.
                 </p>
               </div>
             </div>
             
             <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2019 - 2021</div>
+              {/* <div className="timeline-dot"></div> */}
               <div className="timeline-content">
                 <h3>Quantitative Analyst</h3>
                 <h4>Weber Shandwick</h4>
+                <h4>2019 - 2021</h4>
                 <p>
-                  Weber
+                As a Quantitative Business Analyst in Weber Shandwick's Global Intelligence team, I led client deliverables by translating stakeholder requirements into actionable analytics reports, reduced data processing time by 50% through text clustering and word vector analysis, implemented innovative search algorithms, collaborated on NLP sentiment modeling, and contributed to securing over $2.4M in new business through strategic analytics planning.
                 </p>
               </div>
             </div>
@@ -118,10 +118,10 @@ const Home: React.FC = () => {
           </div>
 
           <div className="education-item">
-            <div className="education-institution"> Stevens Institute of Technology</div>
+            <div className="education-institution">Stevens Institute of Technology</div>
             <div className="education-year">2014-2018</div>
-            <div className="education-degree">Masters of Engineering, Biomedical Engineering</div>
-            <div className="education-degree">Bachelors of Engineering, Biomedical Engineering</div>
+            <h3>Masters of Engineering, Biomedical Engineering</h3>
+            <h3>Bachelors of Engineering, Biomedical Engineering</h3>
             <ul>
               <li>Kurt Lab</li>
             </ul>
