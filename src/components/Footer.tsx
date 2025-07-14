@@ -9,18 +9,18 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="social-links">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/johnmrtnz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/johnmartinez526/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in"></i>
           </a>
-          <a href="mailto:your.email@example.com" aria-label="Email">
+          {/* <a href="mailto:your.email@example.com" aria-label="Email">
             <i className="fas fa-envelope"></i>
-          </a>
+          </a> */}
         </div>
         <div className="copyright">
-          <p>&copy; {currentYear} Your Name. All Rights Reserved.</p>
+          <p>&copy; {currentYear} John Martinez. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

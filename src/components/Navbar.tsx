@@ -13,8 +13,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          Pan de Bono
+        <Link to="/" className="navbar-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          John Martinez
         </Link>
         
         <div className="menu-icon" onClick={toggleMenu}>
@@ -23,9 +23,15 @@ const Navbar: React.FC = () => {
         
         <ul className={isMenuOpen ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
               About Me
-            </Link>
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="#experience" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              Experience
+            </a>
           </li>
           {/* Add Blog link in the future */}
           {/* 
