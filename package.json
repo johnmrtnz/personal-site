@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "https://johnmrtnz.github.io/personal-site/",
   "version": "0.1.0",
   "private": true,
   "overrides": {
@@ -7,8 +8,7 @@
       "@svgr/webpack": "8.1.0",
       "typescript": "4.9.5",
       "postcss": "8.4.38"
-    },
-    "homepage": "https://johnmrtnz.github.io/personal-site/"
+    }
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
