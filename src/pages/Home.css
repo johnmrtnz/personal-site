@@ -70,11 +70,11 @@ a.btn {
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 20px;
   list-style: none;
-  padding: 6px 16px;
+  padding: 12px 20px;
   position: relative;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   user-select: none;
@@ -83,6 +83,8 @@ a.btn {
   vertical-align: middle;
   white-space: nowrap;
   word-wrap: break-word;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 a.btn:hover {
@@ -500,6 +502,37 @@ a.btn:-webkit-details-marker {
     width: 280px;
     height: 280px;
   }
+
+  .hero-content p,
+  .about-text p,
+  .position-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-section {
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  
+  .about-section,
+  .experience-section {
+    padding: 60px 0; /* Reduce from 100px */
+  }
+  
+  .container {
+    padding: 0 16px; /* Increase from 20px for better mobile margins */
+  }
+  
+  .position-item {
+    padding: 20px 16px; /* Reduce padding on mobile */
+  }
+  
+  .position-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -527,4 +560,29 @@ a.btn:-webkit-details-marker {
   .info-title {
     margin-bottom: 5px;
   }
+
+  .button-container {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  a.btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .profile-image-placeholder {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+  }
+  
+  .profile-image-placeholder img {
+    width: 200px;
+    height: 200px;
+  }
+
 }
+
