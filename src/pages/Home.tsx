@@ -15,7 +15,7 @@ const Home: React.FC = () => {
               Welcome to my personal website!
             </p>
             <div className="hero-cta">
-              <a href="#about"><img src="/icons/caret-circle-double-down.svg" alt="Down Arrow" /></a>
+              <a href="#about"><img src="./icons/caret-circle-double-down.svg" alt="Down Arrow" /></a>
               
               <br></br>
               {/* <a href="#experience" className="btn secondary-btn">See My Work</a> */}
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             <div className="about-image">
               {/* You can add your profile image here */}
               <div className="profile-image-placeholder">
-                <img src="/images/headshot.jpeg" alt="Headshot" />
+                <img src="./images/headshot.jpeg" alt="Headshot" />
               </div>
             </div>
             
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             <div className="company-group">
               
               <div className="company-logo">
-                <img src="/images/EY_logo_2019.svg" alt="EY Logo" />
+                <img src="./images/EY_logo_2019.svg" alt="EY Logo" />
               </div>
 
               
@@ -112,7 +112,7 @@ const Home: React.FC = () => {
             <div className="company-group">
               
               <div className="company-logo">
-                <img src="/images/weber_shandwick_logo.jpeg" alt="Weber Shandwick Logo" />
+                <img src="./images/weber_shandwick_logo.jpeg" alt="Weber Shandwick Logo" />
               </div>
 
               
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
           <div className="company-group">
               
               <div className="company-logo">
-                <img src="/images/Stevens_Institute_of_Technology_Logo_2022.Webp" alt="Stevens Logo" />
+                <img src="./images/Stevens_Institute_of_Technology_Logo_2022.Webp" alt="Stevens Logo" />
               </div>
 
               

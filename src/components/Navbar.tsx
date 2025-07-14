@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <Link to="./" className="navbar-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           John Martinez
         </Link>
         
