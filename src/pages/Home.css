@@ -245,8 +245,8 @@ a.btn:-webkit-details-marker {
 }
 
 .company-logo img {
-  max-height: 90px;
-  max-width: 150px;
+  max-height: 150px;
+  max-width: 200px;
   object-fit: contain;
   filter: opacity(0.8);
   transition: filter 0.3s ease;
