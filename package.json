@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://johnmrtnz.github.io/",
+  "homepage": "https://johnmrtnz.github.io",
   "private": true,
   "overrides": {
     "react-scripts": {
