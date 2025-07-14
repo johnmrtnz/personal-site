@@ -57,7 +57,7 @@ const Home: React.FC = () => {
               <div className='button-container'>
                 <a className="btn" href="https://www.linkedin.com/in/johnmartinez526/" target="_blank" rel="noopener">LinkedIn</a>
                 <a className="btn" href="https://github.com/johnmrtnz" target="_blank" rel="noopener">Github</a>
-                <a className="btn" href="#experience" target="_blank" rel="noopener">Portfolio</a>
+                {/* <a className="btn" href="#experience" target="_blank" rel="noopener">Portfolio</a> */}
               </div>
 
             </div>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
               <div className="positions-list">
                 <div className="position-item">
                   <div className="position-header">
-                    <h3>Manager</h3>
+                    <h3>Manager, Forensics Data Analytics</h3>
                     <span className="position-duration">2024 - Present</span>
                   </div>
                   <ul className="formatted-list">
@@ -97,14 +97,14 @@ const Home: React.FC = () => {
                 
                 <div className="position-item">
                   <div className="position-header">
-                    <h3>Senior</h3>
+                    <h3>Senior Consultant, Forensics Data Analytics</h3>
                     <span className="position-duration">2021 - 2024</span>
                   </div>
-                
-                  <li>Executed product strategy for NLP-powered risk analytics dashboard, delivering 40% faster compliance risk identification and enabling data driven decisions saving clients $3M+"</li>
-                  <li>Pioneered Generative AI adoption by designing and deploying GPT-powered policy chatbot, conducting user pilots that improved accessibility by 35% and presented findings at industry conferences</li>
-                  <li>Developed machine learning models through human-in-the-loop processes, iteratively training models with stakeholder-tagged data to achieve optimal accuracy</li>
-                
+                  <ul className="formatted-list">
+                    <li>Executed product strategy for NLP-powered risk analytics dashboard, delivering 40% faster compliance risk identification and enabling data driven decisions saving clients $3M+"</li>
+                    <li>Pioneered Generative AI adoption by designing and deploying GPT-powered policy chatbot, conducting user pilots that improved accessibility by 35% and presented findings at industry conferences</li>
+                    <li>Developed machine learning models through human-in-the-loop processes, iteratively training models with stakeholder-tagged data to achieve optimal accuracy</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -122,10 +122,11 @@ const Home: React.FC = () => {
                     <h3>Quantitative Business Analyst</h3>
                     <span className="position-duration">2019 - 2021</span>
                   </div>
-                  <li>Managed client deliverables through project lifecycle, translating stakeholder requirements into analytics reports that improved marketing strategy while reducing data processing time by 50% through text vectorization and clustering techniques in Python</li>
-                  <li>Designed analytics platform to process and visualize large-scale data sets (1TB+), creating dashboards that enabled strategic data driven decision making and measurable ROI for client campaigns</li>
-                  <li>Developed multi-platform social media analytics processing data from Twitter, Instagram, Facebook, Reddit, and 100+ news outlets, creating influencer identification algorithms that improved client campaign targeting accuracy by 45% and generated $2.4M+ in new business through data driven marketing strategies</li>
-
+                  <ul className="formatted-list">
+                    <li>Managed client deliverables through project lifecycle, translating stakeholder requirements into analytics reports that improved marketing strategy while reducing data processing time by 50% through text vectorization and clustering techniques in Python</li>
+                    <li>Designed analytics platform to process and visualize large-scale data sets (1TB+), creating dashboards that enabled strategic data driven decision making and measurable ROI for client campaigns</li>
+                    <li>Developed multi-platform social media analytics processing data from Twitter, Instagram, Facebook, Reddit, and 100+ news outlets, creating influencer identification algorithms that improved client campaign targeting accuracy by 45% and generated $2.4M+ in new business through data driven marketing strategies</li>
+                  </ul>
                       
                 </div>
                 
