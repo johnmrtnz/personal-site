@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "https://johnmrtnz.github.io/",
   "private": true,
   "overrides": {
     "react-scripts": {
@@ -9,7 +10,6 @@
       "postcss": "8.4.38"
     }
   },
-  "homepage": "https://johnmrtnz.github.io/personal-site",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
