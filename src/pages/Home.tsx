@@ -16,9 +16,6 @@ const Home: React.FC = () => {
             </p>
             <div className="hero-cta">
               <a href="#about"><img src="icons/caret-circle-double-down.svg" alt="Down Arrow" /></a>
-              
-              <br></br>
-              {/* <a href="#experience" className="btn secondary-btn">See My Work</a> */}
             </div>
           </div>
         </div>
@@ -46,18 +43,10 @@ const Home: React.FC = () => {
               <p>
               My journey from developing brain imaging algorithms as a Biomedical Engineering researcher to optimizing fraud detection systems reflects my commitment to using data science for meaningful impact, combining my technical skills in Python, data visualization, and machine learning with my bilingual background to bring a unique perspective to every challenge.
               </p>
-              
-              {/* <div className="personal-info">
-                <div className="info-item">
-                  <span className="info-title">Location:</span>
-                  <span className="info-value">Brooklyn, NY</span>
-                </div>
-              </div> */}
 
               <div className='button-container'>
-                <a className="btn" href="https://www.linkedin.com/in/johnmartinez526/" target="_blank" rel="noopener">LinkedIn</a>
-                <a className="btn" href="https://github.com/johnmrtnz" target="_blank" rel="noopener">Github</a>
-                {/* <a className="btn" href="#experience" target="_blank" rel="noopener">Portfolio</a> */}
+                <a className="btn" href="https://www.linkedin.com/in/johnmartinez526/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a className="btn" href="https://github.com/johnmrtnz" target="_blank" rel="noopener noreferrer">Github</a>
               </div>
 
             </div>
@@ -159,24 +148,12 @@ const Home: React.FC = () => {
                     <span className="position-duration">2014 - 2018</span>
                   </div>
                   <p>• Master's Thesis: Amplified Flow Imaging (aFlow): Uncovering hidden motions between cerebral hemodynamics and brain motion</p>
-                  <p>• Published as co-first author journal of <a href="https://ieeexplore.ieee.org/document/9153022" target="_blank" rel="noopener">IEEE Transaction on Medical Imaging</a> </p>
-                  <p>• NSF Vizzies <a href="https://www.popsci.com/vizzies-winners-2018/" target="_blank" rel="noopener">Best Scientific Visualization Award of 2018</a> </p>
+                  <p>• Published as co-first author journal of <a href="https://ieeexplore.ieee.org/document/9153022" target="_blank" rel="noopener noreferrer">IEEE Transaction on Medical Imaging</a> </p>
+                  <p>• NSF Vizzies <a href="https://www.popsci.com/vizzies-winners-2018/" target="_blank" rel="noopener noreferrer">Best Scientific Visualization Award of 2018</a> </p>
                 </div>
                 
               </div>
             </div>
-
-          
-
-          {/* <div className="education-item">
-            <div className="education-institution">Stevens Institute of Technology</div>
-            <div className="education-year">2014-2018</div>
-            <h3>Masters of Engineering, Biomedical Engineering</h3>
-            <h3>Bachelors of Engineering, Biomedical Engineering</h3>
-            <ul>
-              <li>Kurt Lab</li>
-            </ul>
-          </div> */}
 
         </div>
 
