@@ -1,6 +1,7 @@
 // pages/Home.tsx
 import React from 'react';
 import InteractiveGrid from '../components/InteractiveGrid';
+import InteractiveText from '../components/InteractiveText';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -17,8 +18,20 @@ const Home: React.FC = () => {
         />
         <div className="container">
           <div className="hero-content">
-            <h1>Hello, I'm <span className="highlight">John</span></h1>
-            <h2>Data Explorer</h2>
+            <InteractiveText
+              text="Hello, I'm John"
+              tag="h1"
+              displacement={15}
+              sigma={120}
+              splitBy="char"
+            />
+            <InteractiveText
+              text="Data Explorer"
+              tag="h2"
+              displacement={12}
+              sigma={100}
+              splitBy="char"
+            />
             <p>
               Welcome to my personal website!
             </p>

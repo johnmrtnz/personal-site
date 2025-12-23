@@ -1,0 +1,46 @@
+/* InteractiveText.css */
+
+.interactive-text-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.interactive-text {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+.interactive-char {
+  display: inline-block;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  cursor: default;
+}
+
+/* Prevent text selection during interaction for smoother experience */
+.interactive-text {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Maintain original h1/h2 styles for hero content */
+.hero-content .interactive-text-wrapper {
+  text-align: center;
+}
+
+.hero-content h1.interactive-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-content h2.interactive-text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
