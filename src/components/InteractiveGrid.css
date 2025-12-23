@@ -1,0 +1,20 @@
+/* InteractiveGrid.css */
+
+.interactive-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  cursor: crosshair;
+  z-index: 1;
+}
+
+/* Ensure the parent container has position relative */
+.grid-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

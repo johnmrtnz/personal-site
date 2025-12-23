@@ -1,5 +1,6 @@
 // pages/Home.tsx
 import React from 'react';
+import InteractiveGrid from '../components/InteractiveGrid';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -7,6 +8,13 @@ const Home: React.FC = () => {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section" id="hero">
+        <InteractiveGrid
+          gridSpacing={20}
+          displacement={20}
+          sigma={100}
+          lineColor="rgba(255, 255, 255, 0.4)"
+          lineWidth={1.5}
+        />
         <div className="container">
           <div className="hero-content">
             <h1>Hello, I'm <span className="highlight">John</span></h1>
