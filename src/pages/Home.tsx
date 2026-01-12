@@ -1,17 +1,29 @@
 // pages/Home.tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import InteractiveGrid from '../components/InteractiveGrid';
 import InteractiveText from '../components/InteractiveText';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 576);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section" id="hero">
         <InteractiveGrid
-          gridSpacing={20}
-          displacement={20}
+          gridSpacing={isMobile ? 30 : 20}
+          displacement={isMobile ? 12 : 20}
           sigma={100}
           lineColor="rgba(255, 255, 255, 0.4)"
           lineWidth={1.5}
@@ -21,15 +33,15 @@ const Home: React.FC = () => {
             <InteractiveText
               text="Hello, I'm John"
               tag="h1"
-              displacement={15}
-              sigma={120}
+              displacement={isMobile ? 8 : 15}
+              sigma={isMobile ? 80 : 120}
               splitBy="char"
             />
             <InteractiveText
               text="Data Explorer"
               tag="h2"
-              displacement={12}
-              sigma={100}
+              displacement={isMobile ? 6 : 12}
+              sigma={isMobile ? 70 : 100}
               splitBy="char"
             />
             <p>
