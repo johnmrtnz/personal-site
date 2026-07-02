@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               splitBy="char"
             />
             <InteractiveText
-              text="Data Explorer"
+              text="Data Scientist"
               tag="h2"
               displacement={isMobile ? 6 : 12}
               sigma={isMobile ? 70 : 100}
@@ -108,13 +108,7 @@ const Home: React.FC = () => {
                     <h3>Manager, Forensics Data Analytics</h3>
                     <span className="position-duration">2024 - Present</span>
                   </div>
-                  <ul className="formatted-list">
-                    <li>Leading product strategy and cross-functional teams to deliver AI-driven compliance platforms that have generated $2M+ in new client work</li>
-                    <li>Established comprehensive product vision, roadmaps, and KPIs while applying customer-centric design principles that improved user adoption by 55%</li> 
-                    <li>Built and scaled analytics teams of 8+ data scientists and engineers across 4 global offices, achieving 95%+ retention through mentoring and performance management. Collaborated with engineering teams on database architecture and technical specifications to optimize query performance for real-time data processing</li>
-                    <li>Implemented data governance frameworks and generative AI solutions, including chatbots for SQL database interactions</li>
-                    <li>Regularly present analytical insights and product demos to C-suite executives, translating complex data into actionable business intelligence</li>
-                  </ul>
+                  <p>I build and evaluate AI systems for risk and compliance, from LLM bias testing for a global social media platform to EY's ML-powered risk monitoring platform, Forensics.AI.</p>
                 </div>
                 
                 <div className="position-item">
@@ -122,11 +116,7 @@ const Home: React.FC = () => {
                     <h3>Senior Consultant, Forensics Data Analytics</h3>
                     <span className="position-duration">2021 - 2024</span>
                   </div>
-                  <ul className="formatted-list">
-                    <li>Executed product strategy for NLP-powered risk analytics dashboard, delivering 40% faster compliance risk identification and enabling data driven decisions saving clients $3M+"</li>
-                    <li>Pioneered Generative AI adoption by designing and deploying GPT-powered policy chatbot, conducting user pilots that improved accessibility by 35% and presented findings at industry conferences</li>
-                    <li>Developed machine learning models through human-in-the-loop processes, iteratively training models with stakeholder-tagged data to achieve optimal accuracy</li>
-                  </ul>
+                  <p>Lead data scientist on Forensics.AI, training ML models for adverse media detection and building the Azure pipelines that fed them.</p>
                 </div>
               </div>
             </div>
@@ -144,12 +134,8 @@ const Home: React.FC = () => {
                     <h3>Quantitative Business Analyst</h3>
                     <span className="position-duration">2019 - 2021</span>
                   </div>
-                  <ul className="formatted-list">
-                    <li>Managed client deliverables through project lifecycle, translating stakeholder requirements into analytics reports that improved marketing strategy while reducing data processing time by 50% through text vectorization and clustering techniques in Python</li>
-                    <li>Designed analytics platform to process and visualize large-scale data sets (1TB+), creating dashboards that enabled strategic data driven decision making and measurable ROI for client campaigns</li>
-                    <li>Developed multi-platform social media analytics processing data from Twitter, Instagram, Facebook, Reddit, and 100+ news outlets, creating influencer identification algorithms that improved client campaign targeting accuracy by 45% and generated $2.4M+ in new business through data driven marketing strategies</li>
-                  </ul>
-                      
+                  <p>Turned 1TB+ of social media and news data into analytics that sharpened campaign targeting for global brands.</p>
+
                 </div>
                 
               </div>
