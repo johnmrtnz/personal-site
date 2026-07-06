@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ base = '' }) => {
   return (
     <section className="hero-section" id="hero">
       <InteractiveGrid
-        gridSpacing={isMobile ? 30 : 20}
+        gridSpacing={isMobile ? 20 : 15}
         displacement={isMobile ? 12 : 20}
         sigma={100}
         lineColor="rgba(255, 255, 255, 0.4)"

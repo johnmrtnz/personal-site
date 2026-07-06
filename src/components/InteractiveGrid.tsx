@@ -176,8 +176,8 @@ const InteractiveGrid: React.FC<InteractiveGridProps> = ({
         const strength = k.amp / displacement;
         if (strength < 0.05) continue;
         const gradient = ctx.createRadialGradient(k.x, k.y, 0, k.x, k.y, sigma * 2.5);
-        gradient.addColorStop(0, `rgba(255, 255, 255, ${0.5 * strength})`);
-        gradient.addColorStop(0.45, `rgba(0, 180, 216, ${0.22 * strength})`);
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${0.85 * strength})`);
+        gradient.addColorStop(0.4, `rgba(0, 180, 216, ${0.55 * strength})`);
         gradient.addColorStop(1, 'rgba(0, 180, 216, 0)');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, dimensions.width, dimensions.height);
