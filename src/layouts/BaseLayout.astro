@@ -1,0 +1,40 @@
+---
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'John Martinez',
+  description = 'John Martinez - Data Scientist specializing in forensic data analytics, machine learning, and AI systems. Manager at Ernst & Young with expertise in Python, LLM evaluation, and AI-driven compliance solutions.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href={`${base}/favicon.ico`} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Loading Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="app">
+      <Navbar client:load base={base} />
+      <main class="main-content">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

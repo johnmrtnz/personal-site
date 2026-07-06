@@ -1,4 +1,4 @@
-/* App.css - Main application styles */
+/* styles/global.css - Global application styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -22,4 +22,9 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   background-color: var(--background-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
