@@ -53,6 +53,7 @@ const Hero: React.FC<HeroProps> = ({ base = '' }) => {
           </div>
         </div>
       </div>
+      <div className="hero-caption" aria-hidden="true">gaussian displacement · σ = 100</div>
     </section>
   );
 };

@@ -11,6 +11,8 @@ interface InteractiveTextProps {
   splitBy?: 'char' | 'word';
 }
 
+const EASE = 0.18; // how quickly characters chase their target displacement
+
 const InteractiveText: React.FC<InteractiveTextProps> = ({
   text,
   tag = 'h1',
@@ -19,10 +21,8 @@ const InteractiveText: React.FC<InteractiveTextProps> = ({
   sigma = 100,
   splitBy = 'char',
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mousePos = useRef({ x: -1000, y: -1000 });
+  const mousePos = useRef({ x: -10000, y: -10000 });
   const [chars, setChars] = useState<Array<{ char: string; ref: React.RefObject<HTMLSpanElement> }>>([]);
-  const animationRef = useRef<number>();
 
   // Split text into characters or words
   useEffect(() => {
@@ -39,100 +39,112 @@ const InteractiveText: React.FC<InteractiveTextProps> = ({
     setChars(elements);
   }, [text, splitBy]);
 
-  // Animation loop
+  // Animation loop with easing; stops when every character is at rest and
+  // restarts on the next pointer event.
   useEffect(() => {
-    // Gaussian displacement function (defined inside useEffect to avoid dependency issues)
-    const gaussianDisplacement = (distance: number): number => {
-      return displacement * Math.exp(-(distance * distance) / (2 * sigma * sigma));
-    };
+    if (chars.length === 0) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const twoSigmaSq = 2 * sigma * sigma;
+    const cutoffSq = sigma * sigma * 9;
+    const offsets = chars.map(() => ({ x: 0, y: 0 }));
+
+    let animationId = 0;
+    let running = false;
 
     const animate = () => {
-      chars.forEach(({ ref }) => {
-        if (!ref.current) return;
+      let active = false;
 
-        const rect = ref.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+      chars.forEach(({ ref }, i) => {
+        const el = ref.current;
+        if (!el) return;
 
-        const dx = centerX - mousePos.current.x;
-        const dy = centerY - mousePos.current.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        // getBoundingClientRect includes the current transform, so subtract
+        // the applied offset to recover the character's resting center.
+        const rect = el.getBoundingClientRect();
+        const baseX = rect.left + rect.width / 2 - offsets[i].x;
+        const baseY = rect.top + rect.height / 2 - offsets[i].y;
 
-        if (distance < sigma * 3) {
-          const displace = gaussianDisplacement(distance);
-          const angle = Math.atan2(dy, dx);
-          const translateX = Math.cos(angle) * displace;
-          const translateY = Math.sin(angle) * displace;
+        const dx = baseX - mousePos.current.x;
+        const dy = baseY - mousePos.current.y;
+        const distSq = dx * dx + dy * dy;
 
-          ref.current.style.transform = `translate(${translateX}px, ${translateY}px)`;
-        } else {
-          ref.current.style.transform = 'translate(0px, 0px)';
+        let tx = 0;
+        let ty = 0;
+        if (distSq < cutoffSq) {
+          const dist = Math.sqrt(distSq) || 1;
+          const displace = displacement * Math.exp(-distSq / twoSigmaSq);
+          tx = (dx / dist) * displace;
+          ty = (dy / dist) * displace;
         }
+
+        offsets[i].x += (tx - offsets[i].x) * EASE;
+        offsets[i].y += (ty - offsets[i].y) * EASE;
+
+        if (Math.abs(offsets[i].x) > 0.05 || Math.abs(offsets[i].y) > 0.05 || tx !== 0 || ty !== 0) {
+          active = true;
+        }
+
+        el.style.transform = `translate(${offsets[i].x}px, ${offsets[i].y}px)`;
       });
 
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    if (chars.length > 0) {
-      animate();
-    }
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+      if (active && running) {
+        animationId = requestAnimationFrame(animate);
+      } else {
+        running = false;
       }
     };
-  }, [chars, displacement, sigma]);
 
-  // Mouse move handler
-  const handleMouseMove = (e: MouseEvent) => {
-    mousePos.current = {
-      x: e.clientX,
-      y: e.clientY,
+    const start = () => {
+      if (!running) {
+        running = true;
+        animationId = requestAnimationFrame(animate);
+      }
     };
-  };
 
-  // Mouse leave handler
-  const handleMouseLeave = () => {
-    mousePos.current = { x: -1000, y: -1000 };
-  };
-
-  // Touch handlers for mobile
-  const handleTouchMove = (e: TouchEvent) => {
-    if (e.touches.length === 0) return;
-    mousePos.current = {
-      x: e.touches[0].clientX,
-      y: e.touches[0].clientY,
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePos.current = { x: e.clientX, y: e.clientY };
+      start();
     };
-  };
 
-  const handleTouchEnd = () => {
-    mousePos.current = { x: -1000, y: -1000 };
-  };
+    const handleMouseLeave = () => {
+      mousePos.current = { x: -10000, y: -10000 };
+      start();
+    };
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length === 0) return;
+      mousePos.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      start();
+    };
 
-    // Add event listeners to the entire viewport for smooth tracking
+    const handleTouchEnd = () => {
+      mousePos.current = { x: -10000, y: -10000 };
+      start();
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseleave', handleMouseLeave);
-    window.addEventListener('touchmove', handleTouchMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     window.addEventListener('touchend', handleTouchEnd);
 
+    start();
+
     return () => {
+      running = false;
+      cancelAnimationFrame(animationId);
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, []);
+  }, [chars, displacement, sigma]);
 
   // Render the appropriate tag
   const Tag = tag;
 
   return (
-    <div ref={containerRef} className="interactive-text-wrapper">
+    <div className="interactive-text-wrapper">
       <Tag className={`interactive-text ${className}`}>
         {chars.map((item, index) => (
           <span
