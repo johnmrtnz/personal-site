@@ -45,9 +45,6 @@ const Hero: React.FC<HeroProps> = ({ base = '' }) => {
             sigma={isMobile ? 70 : 100}
             splitBy="char"
           />
-          <p>
-            Welcome to my personal website!
-          </p>
           <div className="hero-cta">
             <a href="#about"><img src={`${base}/icons/caret-circle-double-down.svg`} alt="Down Arrow" /></a>
           </div>
